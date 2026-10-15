@@ -1,0 +1,75 @@
+.strip {
+  position: relative;
+  display: flex;
+  height: 84px;
+  margin: 12px 0;
+  padding: 4px;
+  border-radius: 14px;
+  background: #1e293b;
+  user-select: none;
+  touch-action: none;
+}
+
+.white,
+.black {
+  padding: 0;
+  border: none;
+  cursor: default;
+  transition: background 0.08s ease;
+}
+
+.white {
+  position: relative;
+  flex: 1;
+  margin: 0 1px;
+  border-radius: 0 0 6px 6px;
+  background: #fff;
+}
+
+.black {
+  position: absolute;
+  top: 4px;
+  z-index: 1;
+  height: 52%;
+  border-radius: 0 0 4px 4px;
+  background: #0f172a;
+}
+
+.interactive .white,
+.interactive .black {
+  cursor: pointer;
+}
+
+.interactive .white:active {
+  background: #e2e8f0;
+}
+
+.interactive .black:active {
+  background: #334155;
+}
+
+.label {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  font-size: 9px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.white.lit,
+.black.lit {
+  background: var(--accent, #ff9500);
+}
+
+.white.good,
+.black.good {
+  background: #22c55e;
+}
+
+.white.bad,
+.black.bad {
+  background: #e5484d;
+}

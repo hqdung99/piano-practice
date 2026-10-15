@@ -1,0 +1,168 @@
+.detector {
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.listenBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #2a2a2a;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.listenBtn:hover {
+  border-color: #666;
+  background: #333;
+}
+
+.listening {
+  background: #1a3a5c;
+  border-color: #4a8fe6;
+  color: #6ea8fe;
+}
+
+.micDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #666;
+}
+
+.listening .micDot {
+  background: #6ea8fe;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.error {
+  margin-top: 12px;
+  color: #ff6666;
+  font-size: 13px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.note {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  color: #e0efff;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 24px rgba(110, 168, 254, 0.4);
+}
+
+.noteIdle {
+  color: #444;
+  text-shadow: none;
+}
+
+.freq {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #888;
+  font-variant-numeric: tabular-nums;
+}
+
+.meter {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 8px;
+  margin-top: 16px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #663333, #333 40%, #2a4a2a 50%, #333 60%, #663333);
+}
+
+.meterCenter {
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  transform: translateX(-50%);
+  background: #888;
+}
+
+.needle {
+  position: absolute;
+  top: -6px;
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  background: #ffb347;
+  transition: left 0.08s linear;
+}
+
+.needleInTune {
+  background: #66dd66;
+  box-shadow: 0 0 8px rgba(102, 221, 102, 0.6);
+}
+
+.meterLabels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 360px;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #777;
+  font-variant-numeric: tabular-nums;
+}
+
+.history {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.historyNote {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #aaa;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.historyNote:last-child {
+  background: #1a3a5c;
+  color: #6ea8fe;
+}

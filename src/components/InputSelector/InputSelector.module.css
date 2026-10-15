@@ -1,0 +1,119 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.segmented {
+  display: flex;
+  border: 1px solid #444;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.segmented button {
+  padding: 6px 12px;
+  border: none;
+  background: #2a2a2a;
+  color: #888;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.segmented button + button {
+  border-left: 1px solid #444;
+}
+
+.segmented button:hover {
+  color: #bbb;
+}
+
+.segmented .selected {
+  background: #1a3a5c;
+  color: #6ea8fe;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #999;
+}
+
+.btn {
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #2a2a2a;
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: #666;
+  background: #333;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #555;
+  flex-shrink: 0;
+}
+
+.dotLive {
+  background: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.7);
+}
+
+.heard {
+  min-width: 36px;
+  padding: 1px 8px;
+  border-radius: 6px;
+  background: #1a3a5c;
+  color: #e0efff;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.heardIdle {
+  background: #2a2a2a;
+  color: #666;
+}
+
+.tip {
+  color: #666;
+  font-size: 11px;
+}
+
+.error {
+  color: #ff6666;
+}

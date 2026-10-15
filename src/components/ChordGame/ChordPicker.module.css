@@ -1,0 +1,151 @@
+.picker {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.count {
+  font-size: 12px;
+  color: #6ea8fe;
+}
+
+.countEmpty {
+  font-size: 12px;
+  color: #ffb347;
+}
+
+.presets,
+.chosen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.preset,
+.chip {
+  padding: 4px 10px;
+  border: 1px solid #444;
+  border-radius: 12px;
+  background: #2a2a2a;
+  color: #bbb;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset:hover:not(:disabled),
+.chip:hover {
+  border-color: #666;
+  color: #ddd;
+}
+
+.preset:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.presetOn {
+  border-color: #2a6fdb;
+  background: #1a3a5c;
+  color: #6ea8fe;
+}
+
+.chip {
+  border-color: #3a2d52;
+  background: #241a33;
+  color: #c9a6f0;
+  font-weight: 600;
+}
+
+.gridWrap {
+  overflow-x: auto;
+}
+
+.grid {
+  border-collapse: separate;
+  border-spacing: 3px;
+  margin: 0 auto;
+}
+
+.grid th {
+  padding: 0;
+  font-weight: 600;
+}
+
+.axis {
+  width: 100%;
+  min-width: 30px;
+  padding: 2px 4px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #999;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.axis:hover {
+  background: #2a2a2a;
+  color: #ddd;
+}
+
+.grid td {
+  padding: 0;
+}
+
+.cell {
+  display: block;
+  width: 26px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  background: #1f1f1f;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.cell:hover {
+  border-color: #666;
+}
+
+.cellOn {
+  border-color: #9a5fd6;
+  background: #7a3fb0;
+}
+
+@media (max-width: 520px) {
+  .cell {
+    width: 21px;
+  }
+
+  .axis {
+    min-width: 21px;
+    padding: 2px 1px;
+    font-size: 10px;
+  }
+
+  .grid {
+    border-spacing: 2px;
+  }
+}

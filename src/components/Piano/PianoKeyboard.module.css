@@ -1,0 +1,36 @@
+.scrollContainer {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 20px 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #2a2a2a;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.keyboard {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  background: linear-gradient(to bottom, #1a1a1a 0px, #2a2018 6px);
+  border-radius: 0 0 8px 8px;
+  padding-top: 4px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}

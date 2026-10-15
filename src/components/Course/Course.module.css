@@ -1,0 +1,579 @@
+.course {
+  padding: 16px 24px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.headerSide {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.intro {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #888;
+}
+
+.progress {
+  width: 160px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: #6ea8fe;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  font-size: 12px;
+  color: #888;
+  font-variant-numeric: tabular-nums;
+}
+
+.btn {
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #2a2a2a;
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  border-color: #666;
+  background: #333;
+}
+
+.primary {
+  background: #1a3a1a;
+  border-color: #339933;
+  color: #8fdc8f;
+}
+
+.primary:hover {
+  background: #224a22;
+  border-color: #44bb44;
+}
+
+.unit {
+  margin-top: 18px;
+}
+
+.unitTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #e0efff;
+}
+
+.unitTitle span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #888;
+}
+
+.lessons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #ddd;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lesson:hover:not(:disabled) {
+  border-color: rgba(110, 168, 254, 0.4);
+  background: rgba(110, 168, 254, 0.06);
+}
+
+.current {
+  border-color: rgba(110, 168, 254, 0.6);
+  box-shadow: 0 0 0 1px rgba(110, 168, 254, 0.25);
+}
+
+.checkpoint {
+  background: rgba(255, 179, 71, 0.06);
+  border-color: rgba(255, 179, 71, 0.2);
+}
+
+.locked {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.node {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.current .node {
+  background: #1a3a5c;
+  color: #6ea8fe;
+}
+
+.lessonText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  color: #999;
+}
+
+.lessonText strong {
+  font-size: 14px;
+  color: #e8e8e8;
+}
+
+.meta {
+  font-size: 11px;
+  color: #777;
+}
+
+.badge {
+  align-self: flex-start;
+  padding: 1px 8px;
+  border-radius: 6px;
+  background: rgba(255, 179, 71, 0.15);
+  color: #ffb347;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.stars {
+  display: flex;
+  gap: 1px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.starOn {
+  color: #ffb347;
+}
+
+.starOff {
+  color: #444;
+}
+
+.go {
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: #1a3a5c;
+  color: #6ea8fe;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.reset {
+  margin-top: 18px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #777;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Lesson view ---------- */
+
+.lessonView {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  border: 1px solid rgba(110, 168, 254, 0.25);
+  border-radius: 12px;
+  background: rgba(110, 168, 254, 0.06);
+}
+
+.bannerCheckpoint {
+  border-color: rgba(255, 179, 71, 0.3);
+  background: rgba(255, 179, 71, 0.06);
+}
+
+.bannerText {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  color: #999;
+}
+
+.bannerText strong {
+  font-size: 17px;
+  color: #e8e8e8;
+}
+
+.bannerKicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #6ea8fe;
+}
+
+.bannerCheckpoint .bannerKicker {
+  color: #ffb347;
+}
+
+.bannerResult {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pass {
+  color: #8fdc8f;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.fail {
+  color: #ffb347;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.best {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- Streak, workout, tracks ---------- */
+
+.streak {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 149, 0, 0.1);
+  color: #ffb347;
+  font-size: 12px;
+}
+
+.streak strong {
+  font-size: 20px;
+}
+
+.flame {
+  font-size: 16px;
+}
+
+.workout {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 179, 71, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 179, 71, 0.05);
+}
+
+.workoutHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.workoutHead strong {
+  color: #ffcf8a;
+  font-size: 14px;
+}
+
+.workoutSteps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+.workoutStep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #ddd;
+  text-align: left;
+  cursor: pointer;
+}
+
+.workoutDone .node {
+  background: #1a3a1a;
+  color: #8fdc8f;
+}
+
+.trackTabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.trackTabs > button:not(.btn) {
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #888;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.trackTabs > button.trackActive {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e0efff;
+}
+
+.trackSub {
+  font-size: 12px;
+  color: #777;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.lockedNote {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #ffb347;
+}
+
+.skipped {
+  font-size: 11px;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 16px;
+}
+
+/* ---------- Placement dialog ---------- */
+
+.dialogBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.dialog {
+  width: min(460px, calc(100vw - 32px));
+  padding: 20px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: #1c1f2b;
+  color: #ddd;
+}
+
+.dialog h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #e8e8e8;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 14px 0 0;
+  padding: 0;
+  border: none;
+}
+
+.question legend {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.option,
+.optionOn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.optionOn {
+  border-color: rgba(110, 168, 254, 0.6);
+  background: rgba(110, 168, 254, 0.08);
+}
+
+.placementResult {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: #8fdc8f;
+}
+
+.dialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* ---------- Theory 101 ---------- */
+
+.theoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.slide {
+  margin: 18px auto 0;
+  max-width: 640px;
+  min-height: 180px;
+  padding: 22px 26px;
+  border-radius: 12px;
+  background: #fdfbf5;
+  color: #222;
+}
+
+.slide h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.slide p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.example {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 16px;
+  background: #e8f0fd;
+  color: #2a6fdb;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.slideNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  margin-right: 12px;
+}
+
+.dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #444;
+}
+
+.dots .dotActive {
+  width: 20px;
+  background: #6ea8fe;
+}
